@@ -3,13 +3,13 @@ import pickle
 import os
 import datasets
 
-result_basefolder = '../results/ratspn/debd/'
-# result_basefolder = '../quick_results/ratspn/debd/'
+result_basefolder = 'results/ratspn/debd/'
 
 
 def evaluate():
     DEBD = datasets.DEBD
-    DEBD = [e[1] for e in sorted([(datasets.DEBD_num_vars[d], d) for d in DEBD])]
+    # if you want to sort according to number of dimensions
+    # DEBD = [e[1] for e in sorted([(datasets.DEBD_num_vars[d], d) for d in DEBD])]
 
     for dataset in DEBD:
         basefolder_dataset = result_basefolder + dataset + '/'
