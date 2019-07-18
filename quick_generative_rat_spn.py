@@ -1,4 +1,4 @@
-from experiments import generative_rat_spn
+import generative_rat_spn
 
 generative_rat_spn.structure_dict = {}
 generative_rat_spn.structure_dict[2] = [

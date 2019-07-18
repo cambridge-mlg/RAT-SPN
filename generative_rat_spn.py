@@ -18,9 +18,9 @@ dont_start_if_less_than_seconds = 600.0
 optimizer = "em"
 
 if optimizer == "em":
-    base_result_path = "../results/ratspn/debd/"
+    base_result_path = "results/ratspn/debd/"
 elif optimizer == "adam":
-    base_result_path = "../results/ratspn/debd_adam/"
+    base_result_path = "results/ratspn/debd_adam/"
 else:
     raise AssertionError("unknown optimizer")
 
@@ -61,7 +61,7 @@ def run():
                     print("Only {} seconds remaining, stop worker".format(remaining_time))
                     sys.exit(0)
 
-                cmd = "python ../train_rat_spn.py --store_best_valid_loss --store_model_max 1 --num_epochs {}".format(num_epochs)
+                cmd = "python train_rat_spn.py --store_best_valid_loss --store_model_max 1 --num_epochs {}".format(num_epochs)
                 cmd += " --discrete_leaves --lambda_discriminative 0.0"
                 cmd += " --optimizer " + optimizer
                 if dataset == "ad" or optimizer == "adam":
@@ -70,7 +70,7 @@ def run():
                     cmd += " --batch_size 200"
                 cmd += " --timeout_seconds {}".format(remaining_time)
                 cmd += " --split_depth {}".format(split_depth)
-                cmd += " --data_path ../data/DEBD"
+                cmd += " --data_path data/DEBD"
                 cmd += " --data_set {}".format(dataset)
 
                 for key in sorted(structure_config.keys()):
