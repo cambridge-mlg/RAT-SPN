@@ -29,7 +29,7 @@ This will simply train a single RAT-SPN for each depth.
 
 python quick_run_rat_spn_mnist.py
 
-quick_eval_rat_spn_discriminative.py
+python quick_eval_rat_spn_discriminative.py
 
 # Full Training 
 See the run_*.py and eval_*.py files
