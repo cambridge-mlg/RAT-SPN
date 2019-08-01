@@ -63,7 +63,7 @@ def maybe_download_fashion_mnist():
 
 
 def maybe_download_DEBD():
-    if os.path.isfile('data/DEBD'):
+    if os.path.isdir('data/DEBD'):
         print('DEBD already exists')
         return
     subprocess.run(['git', 'clone', 'https://github.com/arranger1044/DEBD', 'data/DEBD'])
@@ -160,7 +160,7 @@ def process_imdb(out_path='data/imdb',
     """Adopted from keras/datasets/imdb/
     """
 
-    out_file = os.path.join(out_path, 'imdb-dense-nmf-{}.pklz'.format(max_topics))
+    out_file = os.path.join(out_path, 'imdb-dense-nmf-{}.pkl'.format(max_topics))
     if os.path.isfile(out_file):
         print('Already exists: {}'.format(out_file))
         return
@@ -295,9 +295,9 @@ def process_imdb(out_path='data/imdb',
         x_test.shape))
 
     # saving to pickle
-    with gzip.open(out_file, 'wb') as f:
+    with open(out_file, 'wb') as f:
         pickle.dump((x_train, y_train, x_valid, y_valid, x_test, y_test), f)
-    print('Saved to gzipped pickle to {}'.format(out_file))
+    print('Saved to pickle to {}'.format(out_file))
 
     # return x_train, y_train, x_valid, y_valid, x_test, y_test
 

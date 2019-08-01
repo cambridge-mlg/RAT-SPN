@@ -5,14 +5,17 @@ import sys
 import subprocess
 import time
 import utils
+import json
 
 print("")
 print("Generative Training of RAT-SPNs on 20 binary datasets")
 print("")
 
+with open('configurations.json') as f:
+    configs = json.loads(f.read())
+
 start_time = time.time()
-time_limit_seconds = 30758400.
-# time_limit_seconds = 42900.0
+time_limit_seconds = configs['worker_time_limit']
 dont_start_if_less_than_seconds = 600.0
 
 optimizer = "em"
@@ -51,6 +54,7 @@ structure_dict[4] = [
     {'num_recursive_splits': 10, 'num_input_distributions': 10, 'num_sums':  8}]
 
 num_epochs = 100
+
 
 def run():
     for dataset in datasets.DEBD:
