@@ -1,4 +1,3 @@
-#import tensorflow as tf
 import os
 import tempfile
 import urllib.request

@@ -4,3 +4,4 @@ __pycache__/
 ratspn_venv/
 results/
 quick_results/
+scribble*.py
