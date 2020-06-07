@@ -34,5 +34,8 @@ python quick_eval_rat_spn_discriminative.py
 # Full Training 
 See the run_*.py and eval_*.py files
 
+# Acknowledgments
+<img src="https://github.com/cambridge-mlg/RAT-SPN/blob/master/acknowledgement/euc.png"  height="100"/>
+* This project received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie Grant Agreement No. 797223 (HYBSPN).
 
 
